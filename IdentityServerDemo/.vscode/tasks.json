@@ -2,12 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "restore",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "restore",
+                "${workspaceFolder}/IdentityServerDemo.sln"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "build",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/ApiKeysHost/ApiKeysHost.csproj",
+                "${workspaceFolder}/IdentityServerHost/IdentityServerHost.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +29,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/ApiKeysHost/ApiKeysHost.csproj",
+                "${workspaceFolder}/IdentityServerHost/IdentityServerHost.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +42,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/ApiKeysHost/ApiKeysHost.csproj",
+                "${workspaceFolder}/IdentityServerHost/IdentityServerHost.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

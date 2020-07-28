@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ApiKeysHost": {
+    "IdentityServerHost": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

@@ -1,15 +1,14 @@
-
 using System.Collections.Generic;
 using IdentityServer4.Models;
 
-namespace ApiKeysHost
+namespace IdentityServerHost
 {
     public static class Config
     {
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-                new ApiScope("api1", "My API")
+                new ApiScope("demoScope", "Demo Scope")
             };
 
         public static IEnumerable<Client> Clients =>
@@ -17,7 +16,7 @@ namespace ApiKeysHost
             {
                 new Client
                 {
-                    ClientId = "client",
+                    ClientId = "demoId",
 
                     // no interactive user, use the clientid/secret for authentication
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
@@ -25,11 +24,11 @@ namespace ApiKeysHost
                     // secret for authentication
                     ClientSecrets =
                     {
-                        new Secret("secret".Sha256())
+                        new Secret("DemoConfidential".Sha256())
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "demoScope" }
                 }
             };
     }
