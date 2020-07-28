@@ -57,8 +57,6 @@ end_of_line = lf
 # Core EditorConfig Options   #
 ###############################
 
-root = true
-
 # All files
 [*]
 indent_style = space
