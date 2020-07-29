@@ -3,6 +3,7 @@
         "ms-dotnettools.csharp",
         "pflannery.vscode-versionlens",
         "k--kato.docomment",
-        "Fudge.auto-using"
+        "Fudge.auto-using",
+        "tintoy.msbuild-project-tools"
     ]
 }

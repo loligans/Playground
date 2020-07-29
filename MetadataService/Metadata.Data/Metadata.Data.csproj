@@ -4,6 +4,8 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <RootNamespace>Metadata.Data</RootNamespace>
         <DocumentationFile>$(BaseOutputPath)\$(Configuration)\$(TargetFrameworkVersion)\Metadata.Data.xml</DocumentationFile>
+        <!-- EFCore has not been annotated for NRT yet. -->
+        <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <ItemGroup Label="Package References">

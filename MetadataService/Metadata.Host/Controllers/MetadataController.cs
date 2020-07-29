@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Metadata.Data.Models;
 
 namespace MetadataHost.Controllers
 {
@@ -13,20 +14,15 @@ namespace MetadataHost.Controllers
     /// </summary>
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class MetadataController : ControllerBase
     {
-        private readonly string[] _summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<MetadataController> _logger;
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="logger"></param>
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public MetadataController(ILogger<MetadataController> logger)
         {
             _logger = logger;
         }
@@ -36,14 +32,12 @@ namespace MetadataHost.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<ImageMetadata> Get()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 5).Select(index => new ImageMetadata
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = _summaries[rng.Next(_summaries.Length)]
+                Id = Guid.NewGuid()
             })
             .ToArray();
         }

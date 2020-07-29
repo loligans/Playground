@@ -11,4 +11,8 @@
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.6" />
     </ItemGroup>
 
+    <ItemGroup Label="Package References">
+        <ProjectReference Include="..\Metadata.Data\Metadata.Data.csproj" />
+    </ItemGroup>
+
 </Project>

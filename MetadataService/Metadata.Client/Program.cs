@@ -44,7 +44,7 @@ namespace MetadataClient
             using var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var endpoint = new Uri("https://localhost:6001/weatherforecast");
+            var endpoint = new Uri("https://localhost:6001/metadata");
             var response = await apiClient.GetAsync(endpoint).ConfigureAwait(false);
             if (!response.IsSuccessStatusCode)
             {
