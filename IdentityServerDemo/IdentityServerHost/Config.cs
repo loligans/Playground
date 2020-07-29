@@ -8,7 +8,8 @@ namespace IdentityServerHost
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-                new ApiScope("demoScope", "Demo Scope")
+                new ApiScope("demoScope", "Demo Scope"),
+                new ApiScope("metadata", "Metadata Scope")
             };
 
         public static IEnumerable<Client> Clients =>
@@ -29,6 +30,16 @@ namespace IdentityServerHost
 
                     // scopes that client has access to
                     AllowedScopes = { "demoScope" }
+                },
+                new Client
+                {
+                    ClientId = "MetadataClient",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    ClientSecrets =
+                    {
+                        new Secret("DemoConfidential".Sha256())
+                    },
+                    AllowedScopes = { "demoScope", "metadata" }
                 }
             };
     }

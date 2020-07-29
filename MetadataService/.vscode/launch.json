@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/MetadataHost/bin/Debug/netcoreapp3.1/MetadataHost.dll",
+            "program": "${workspaceFolder}/Metadata.Host/bin/Debug/netcoreapp3.1/Metadata.Host.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/MetadataHost",
+            "cwd": "${workspaceFolder}/Metadata.Host",
             "stopAtEntry": false,
             // Uncomment to open in browser
             // "serverReadyAction": {
@@ -34,9 +34,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/MetadataClient/bin/Debug/netcoreapp3.1/MetadataClient.dll",
+            "program": "${workspaceFolder}/Metadata.Client/bin/Debug/netcoreapp3.1/Metadata.Client.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/Metadata.Client",
             "stopAtEntry": false,
             "console": "internalConsole"
         }

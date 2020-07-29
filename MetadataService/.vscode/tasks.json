@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "restore",
-                "${workspaceFolder}/IdentityServerDemo.sln"
+                "${workspaceFolder}/Metadata.Service.sln"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -17,7 +17,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/IdentityServerHost/IdentityServerHost.csproj",
+                "${workspaceFolder}/Metadata.Host/Metadata.Host.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -29,7 +29,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/IdentityServerHost/IdentityServerHost.csproj",
+                "${workspaceFolder}/Metadata.Host/Metadata.Host.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -42,7 +42,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/IdentityServerHost/IdentityServerHost.csproj",
+                "${workspaceFolder}/Metadata.Host/Metadata.Host.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
