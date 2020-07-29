@@ -1,7 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup Label="Build Properties">
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <RootNamespace>Metadata.Data</RootNamespace>
+        <DocumentationFile>$(BaseOutputPath)\$(Configuration)\$(TargetFrameworkVersion)\Metadata.Data.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup Label="Package References">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6" PrivateAssets="all" />
+    </ItemGroup>
 
 </Project>

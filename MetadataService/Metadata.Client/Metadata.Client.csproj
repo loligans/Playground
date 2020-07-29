@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup Label="Build Properties">
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>Metadata.Client</RootNamespace>
+        <DocumentationFile>$(BaseOutputPath)\$(Configuration)\$(TargetFrameworkVersion)\Metadata.Client.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup Label="Package References">
+        <PackageReference Include="IdentityModel" Version="4.3.1" />
+    </ItemGroup>
+
+</Project>

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataHost", "MetadataHost\MetadataHost.csproj", "{A13012F6-15C5-4F8F-BAE8-A9872FAC9CE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metadata.Host", "Metadata.Host\Metadata.Host.csproj", "{A13012F6-15C5-4F8F-BAE8-A9872FAC9CE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataClient", "MetadataClient\MetadataClient.csproj", "{0EEFDC89-B57D-4FB6-B7C1-C95B82935BEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metadata.Client", "Metadata.Client\Metadata.Client.csproj", "{0EEFDC89-B57D-4FB6-B7C1-C95B82935BEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metadata.Data", "Metadata.Data\Metadata.Data.csproj", "{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}"
 EndProject

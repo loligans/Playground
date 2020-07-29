@@ -13,7 +13,8 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "MetadataClient/obj/**": true,
-        "MetadataHost/obj/**": true
+        "Metadata.Client/obj/**": true,
+        "Metadata.Data/obj/**": true,
+        "Metadata.Host/obj/**": true
     }
 }
