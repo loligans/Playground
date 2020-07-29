@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataHost", "MetadataHos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataClient", "MetadataClient\MetadataClient.csproj", "{0EEFDC89-B57D-4FB6-B7C1-C95B82935BEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metadata.Data", "Metadata.Data\Metadata.Data.csproj", "{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{0EEFDC89-B57D-4FB6-B7C1-C95B82935BEF}.Release|x64.Build.0 = Release|Any CPU
 		{0EEFDC89-B57D-4FB6-B7C1-C95B82935BEF}.Release|x86.ActiveCfg = Release|Any CPU
 		{0EEFDC89-B57D-4FB6-B7C1-C95B82935BEF}.Release|x86.Build.0 = Release|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Debug|x64.Build.0 = Debug|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Debug|x86.Build.0 = Debug|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Release|x64.ActiveCfg = Release|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Release|x64.Build.0 = Release|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{7DAF9969-F8A0-462C-8ED4-C41CB3FF98F8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
