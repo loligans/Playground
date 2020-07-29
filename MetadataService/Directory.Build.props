@@ -3,6 +3,7 @@
     <PropertyGroup Label="Project Information">
         <LanguageVersion>latest</LanguageVersion>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup Label="Global Packages References">

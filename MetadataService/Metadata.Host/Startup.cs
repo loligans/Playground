@@ -14,14 +14,26 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace MetadataHost
 {
+    /// <summary>
+    ///
+    /// </summary>
     public class Startup
     {
         private readonly IConfiguration _configuration;
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -49,6 +61,11 @@ namespace MetadataHost
             });
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (!env.IsProduction())
