@@ -12,8 +12,6 @@ namespace Metadata.Data.Extensions
         /// <summary>
         ///
         /// </summary>
-        /// <param name="services"></param>
-        /// <returns></returns>
         public static IServiceCollection AddDataServices(this IServiceCollection services)
         {
             services.AddScoped<IMetadataDbContext, MetadataDbContext>();
@@ -24,7 +22,7 @@ namespace Metadata.Data.Extensions
 
         private static void ConfigureDatabase(IServiceCollection services)
         {
-            var connectionString = "";
+            var connectionString = "MetadataConnectionString";
             services.AddDbContextPool<MetadataDbContext>(options =>
                 options.UseSqlServer(
                     connectionString,

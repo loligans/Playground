@@ -15,15 +15,18 @@ namespace Metadata.Data.Models
         /// <summary>
         /// The type of file.
         /// </summary>
+        [Required]
         public string Type { get; set; }
         /// <summary>
         /// The path to the file.
         /// </summary>
+        [Required]
         [StringLength(384)]
         public string Path { get; set; }
         /// <summary>
         /// A short description of the file.
         /// </summary>
+        [Required]
         [StringLength(256)]
         public string Description { get; set; }
         /// <summary>
