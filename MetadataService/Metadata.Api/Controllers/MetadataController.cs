@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Metadata.Data.Models;
 
-namespace MetadataHost.Controllers
+namespace Metadata.Api.Controllers
 {
     /// <summary>
     ///
@@ -32,10 +30,10 @@ namespace MetadataHost.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IEnumerable<ImageMetadata> Get()
+        public IEnumerable<FileMetadata> Get()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new ImageMetadata
+            return Enumerable.Range(1, 5).Select(index => new FileMetadata
             {
                 Id = Guid.NewGuid()
             })

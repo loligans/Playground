@@ -1,3 +1,5 @@
+using System.Threading;
+using System.Threading.Tasks;
 using Metadata.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +15,9 @@ namespace Metadata.Data
         /// </summary>
         /// <value></value>
         DbSet<FileMetadata> FileMetadatas { get; }
+
+        /// <inheritdoc cref="DbContext.SaveChangesAsync(CancellationToken)"/>
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 
     /// <inheritdoc cref="IMetadataDbContext" />

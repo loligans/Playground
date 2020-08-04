@@ -2,8 +2,8 @@
 
     <PropertyGroup Label="Build Properties">
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <RootNamespace>Metadata.Host</RootNamespace>
-        <DocumentationFile>$(BaseOutputPath)\$(Configuration)\$(TargetFrameworkVersion)\Metadata.Host.xml</DocumentationFile>
+        <RootNamespace>Metadata.Api</RootNamespace>
+        <DocumentationFile>$(BaseOutputPath)\$(Configuration)\$(TargetFrameworkVersion)\Metadata.Api.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup Label="Package References">

@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "MetadataHost": {
+    "Metadata.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "metadata",

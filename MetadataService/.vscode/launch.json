@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Metadata.Host/bin/Debug/netcoreapp3.1/Metadata.Host.dll",
+            "program": "${workspaceFolder}/Metadata.Api/bin/Debug/netcoreapp3.1/Metadata.Api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Metadata.Host",
+            "cwd": "${workspaceFolder}/Metadata.Api",
             "stopAtEntry": false,
             // Uncomment to open in browser
             // "serverReadyAction": {

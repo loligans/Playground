@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Metadata.Data.Extensions;
+using Metadata.Api.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
-namespace MetadataHost
+namespace Metadata.Api
 {
     /// <summary>
     ///
@@ -38,27 +40,9 @@ namespace MetadataHost
         {
             services.AddControllers();
 
-            // Registers the Identity Server
-            services.AddAuthentication("Bearer")
-                .AddJwtBearer("Bearer", options =>
-                {
-                    options.Authority = "https://localhost:5001";
+            services.AddMetadataAuthentication();
 
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateAudience = false
-                    };
-                });
-
-            // Registers all valid scopes this Api accepts
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("ApiScope", policy =>
-                {
-                    policy.RequireAuthenticatedUser();
-                    policy.RequireClaim("scope", "metadata");
-                });
-            });
+            services.AddDataServices();
         }
 
         /// <summary>

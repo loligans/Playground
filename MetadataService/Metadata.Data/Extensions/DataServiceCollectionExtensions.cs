@@ -2,12 +2,12 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Metadata.Data
+namespace Metadata.Data.Extensions
 {
     /// <summary>
     ///
     /// </summary>
-    public static class ServiceCollectionExtensions
+    public static class DataServiceCollectionExtensions
     {
         /// <summary>
         ///
