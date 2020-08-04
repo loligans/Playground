@@ -1,5 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Metadata.Data.Extensions
@@ -12,17 +13,17 @@ namespace Metadata.Data.Extensions
         /// <summary>
         ///
         /// </summary>
-        public static IServiceCollection AddDataServices(this IServiceCollection services)
+        public static IServiceCollection AddDataServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IMetadataDbContext, MetadataDbContext>();
 
-            ConfigureDatabase(services);
+            var connectionString = configuration.GetValue<string>("MetadataConnectionString");
+            ConfigureDatabase(services, connectionString);
             return services;
         }
 
-        private static void ConfigureDatabase(IServiceCollection services)
+        private static void ConfigureDatabase(IServiceCollection services, string connectionString)
         {
-            var connectionString = "MetadataConnectionString";
             services.AddDbContextPool<MetadataDbContext>(options =>
                 options.UseSqlServer(
                     connectionString,

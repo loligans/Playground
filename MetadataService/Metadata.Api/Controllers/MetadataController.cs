@@ -4,6 +4,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Metadata.Data.Models;
+using Metadata.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Metadata.Api.Controllers
 {
@@ -15,29 +18,34 @@ namespace Metadata.Api.Controllers
     public class MetadataController : ControllerBase
     {
         private readonly ILogger<MetadataController> _logger;
+        private readonly IMetadataDbContext _context;
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="logger"></param>
-        public MetadataController(ILogger<MetadataController> logger)
+        public MetadataController(IMetadataDbContext context, ILogger<MetadataController> logger)
         {
+            _context = context;
             _logger = logger;
         }
 
         /// <summary>
         ///
         /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public IEnumerable<FileMetadata> Get()
+        [HttpGet("{id}")]
+        public async Task<FileMetadata> GetMetadataById(Guid id)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new FileMetadata
-            {
-                Id = Guid.NewGuid()
-            })
-            .ToArray();
+            return await _context.FileMetadatas.Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [HttpPost("")]
+        public async Task CreateMetadata(FileMetadata request)
+        {
+            _context.FileMetadatas.Add(request);
+            await _context.SaveChangesAsync();
         }
     }
 }

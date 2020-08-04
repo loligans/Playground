@@ -42,7 +42,7 @@ namespace Metadata.Api
 
             services.AddMetadataAuthentication();
 
-            services.AddDataServices();
+            services.AddDataServices(_configuration);
         }
 
         /// <summary>
