@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "ms-dotnettools.csharp",
+        "pflannery.vscode-versionlens",
+        "k--kato.docomment",
+        "Fudge.auto-using"
+    ]
+}

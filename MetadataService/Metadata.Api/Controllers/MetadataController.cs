@@ -35,7 +35,7 @@ namespace Metadata.Api.Controllers
         [HttpGet("{id}")]
         public async Task<FileMetadata> GetMetadataById(Guid id)
         {
-            return await _context.FileMetadatas.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await _context.FileMetadatas.AsNoTracking().Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
         /// <summary>

@@ -1,0 +1,21 @@
+{
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "omnisharp.enableEditorConfigSupport": true,
+    "omnisharp.enableRoslynAnalyzers": true,
+    "csharp.semanticHighlighting.enabled": true,
+    "files.trimTrailingWhitespace": true,
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.vs": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/IdentityServer*/obj/**": true,
+        "**/Metadata*/obj/**": true,
+        "**/desktop.ini": true,
+    }
+}
