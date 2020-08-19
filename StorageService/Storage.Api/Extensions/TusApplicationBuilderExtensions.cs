@@ -3,14 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 using tusdotnet;
-using tusdotnet.Interfaces;
 using tusdotnet.Models;
+using tusdotnet.Models.Configuration;
 using tusdotnet.Stores;
 
 namespace Storage.Api.Extensions
@@ -19,33 +16,18 @@ namespace Storage.Api.Extensions
     {
         public static IApplicationBuilder UseTus(this IApplicationBuilder app)
         {
+            var authService = app.ApplicationServices.GetService<IAuthorizationService>();
+            if (authService is null) {
+                throw new InvalidOperationException($"{nameof(authService)} cannot be null when validating a user's authorization.");
+            }
+
             app.UseTus(context => new DefaultTusConfiguration
             {
                 UrlPath = "/files",
                 Store = new TusDiskStore(@"C:\Users\loligans\Downloads\TusDatastore", true),
-                Events = new tusdotnet.Models.Configuration.Events
+                Events = new Events
                 {
-                    OnAuthorizeAsync = async eventContext =>
-                    {
-                        var authService = app.ApplicationServices.GetService<IAuthorizationService>();
-                        if (authService is null) throw new InvalidOperationException($"{nameof(authService)} cannot be null when validating a user's authorization.");
-
-                        var authenticateResult = await eventContext.HttpContext.AuthenticateAsync();
-                        var authorizeResult = await authService.AuthorizeAsync(eventContext.HttpContext.User, "ApiScope");
-
-                        var status = (authenticateResult, authorizeResult) switch
-                        {
-                            var (authenticate, authorize) when authenticate.Succeeded && authorize.Succeeded => HttpStatusCode.OK,
-                            var (authenticate, authorize) when !authenticate.Succeeded && authorize.Succeeded => HttpStatusCode.Forbidden,
-                            var (authenticate, authorize) when authenticate.Succeeded && !authorize.Succeeded => HttpStatusCode.Unauthorized,
-                            var (_, _) => HttpStatusCode.Forbidden
-                        };
-                        
-                        if (status is HttpStatusCode.Forbidden || status is HttpStatusCode.Unauthorized)
-                        {
-                            eventContext.FailRequest(status);
-                        }
-                    },
+                    OnAuthorizeAsync = async eventContext => await OnAuthorizeAsync(eventContext, authService),
                     OnFileCompleteAsync = async eventContext =>
                     {
                         var file = await eventContext.GetFileAsync();
@@ -55,5 +37,21 @@ namespace Storage.Api.Extensions
             return app;
         }
 
+        private static async Task OnAuthorizeAsync(AuthorizeContext eventContext, IAuthorizationService authService)
+        {
+            var authenticateResult = await eventContext.HttpContext.AuthenticateAsync();
+            if (authenticateResult is null || authenticateResult.Succeeded is false)
+            {
+                eventContext.FailRequest(HttpStatusCode.Forbidden);
+                return;
+            }
+
+            var authorizeResult = await authService.AuthorizeAsync(eventContext.HttpContext.User, "ApiScope");
+            if (authorizeResult is null || authorizeResult.Succeeded is false)
+            {
+                eventContext.FailRequest(HttpStatusCode.Unauthorized);
+                return;
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace Storage.Api.Extensions
     /// <summary>
     /// The organized group of extensions for starting up the service.
     /// </summary>
-    public static class ApiServiceCollectionExtensions
+    public static class OAuthServiceCollectionExtensions
     {
         /// <summary>
         /// Adds the authentication authority and required api scopes to use the service.

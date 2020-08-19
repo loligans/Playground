@@ -1,0 +1,36 @@
+# Servers
+@identityServer = localhost:5001
+@storageServer = localhost:7001
+
+# OAuth Properties
+@oauthScope = storage
+@oauthClientSecret = DemoConfidential
+@oauthGrantType = client_credentials
+
+###
+# @name session_token
+POST https://{{identityServer}}/connect/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+client_id=StorageClient
+&scope={{oauthScope}}
+&client_secret={{oauthClientSecret}}
+&grant_type={{oauthGrantType}}
+
+###
+# @name creation
+POST https://{{storageServer}}/files HTTP/2.0
+Tus-Resumable: 1.0.0
+Upload-Length: 62855
+Upload-Metadata: filename UHJldmlld0FncmVlbWVudC5wZGY=,filetype YXBwbGljYXRpb24vcGRm
+Authorization: Bearer {{session_token.response.body.access_token}}
+
+###
+# @name continuation
+PATCH https://{{storageServer}}{{creation.response.headers.Location}}
+Tus-Resumable: 1.0.0
+Upload-Offset: 0
+Content-Type: application/offset+octet-stream
+Authorization: Bearer {{session_token.response.body.access_token}}
+
+< C:\Users\loligans\Downloads\PreviewAgreement.pdf

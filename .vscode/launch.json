@@ -45,8 +45,22 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
-            "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
+            "logging": {
+                "threadExit": false,
+                "moduleLoad": false
+            }
+        },
+        {
+            "name": "Launch Storage Service",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/StorageService/Storage.Api/bin/Debug/netcoreapp3.1/Storage.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/StorageService/Storage.Api",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "logging": {
                 "threadExit": false,

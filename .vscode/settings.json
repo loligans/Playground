@@ -17,6 +17,7 @@
         "**/IdentityServer*/obj/**": true,
         "**/Metadata*/obj/**": true,
         "**/Storage*/obj/**": true,
+        "**/*csproj.user": true,
         "**/desktop.ini": true,
     }
 }
