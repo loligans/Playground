@@ -9,7 +9,8 @@ namespace IdentityServerHost
             new List<ApiScope>
             {
                 new ApiScope("demoScope", "Demo Scope"),
-                new ApiScope("metadata", "Metadata Scope")
+                new ApiScope("metadata", "Metadata Scope"),
+                new ApiScope("storage", "Storage Scope")
             };
 
         public static IEnumerable<Client> Clients =>
@@ -40,6 +41,16 @@ namespace IdentityServerHost
                         new Secret("DemoConfidential".Sha256())
                     },
                     AllowedScopes = { "demoScope", "metadata" }
+                },
+                new Client
+                {
+                    ClientId = "StorageClient",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    ClientSecrets =
+                    {
+                        new Secret("DemoConfidential".Sha256())
+                    },
+                    AllowedScopes = { "demoScope", "storage" }
                 }
             };
     }

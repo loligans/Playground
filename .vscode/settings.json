@@ -16,6 +16,7 @@
         "**/.DS_Store": true,
         "**/IdentityServer*/obj/**": true,
         "**/Metadata*/obj/**": true,
+        "**/Storage*/obj/**": true,
         "**/desktop.ini": true,
     }
 }

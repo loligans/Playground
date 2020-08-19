@@ -1,21 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServerDemo", "IdentityServerDemo", "{3E6E0C9E-155B-4D0B-9CEA-95F3536E6FE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerClient", "IdentityServerDemo\IdentityServerClient\IdentityServerClient.csproj", "{7F239AB4-711C-4692-8CD9-EB9950A5C7FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerClient", "IdentityServerDemo\IdentityServerClient\IdentityServerClient.csproj", "{7F239AB4-711C-4692-8CD9-EB9950A5C7FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerHost", "IdentityServerDemo\IdentityServerHost\IdentityServerHost.csproj", "{923307DD-154C-40D3-AD04-49F86474800B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerHost", "IdentityServerDemo\IdentityServerHost\IdentityServerHost.csproj", "{923307DD-154C-40D3-AD04-49F86474800B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MetadataService", "MetadataService", "{33CA6AA1-C93A-42CB-95EB-A50E995D68B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metadata.Api", "MetadataService\Metadata.Api\Metadata.Api.csproj", "{141F3774-DC72-4F45-9674-29BA3AEB6AB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metadata.Api", "MetadataService\Metadata.Api\Metadata.Api.csproj", "{141F3774-DC72-4F45-9674-29BA3AEB6AB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metadata.Client", "MetadataService\Metadata.Client\Metadata.Client.csproj", "{E47C216D-C937-45C6-BDBB-03F8F302D133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metadata.Client", "MetadataService\Metadata.Client\Metadata.Client.csproj", "{E47C216D-C937-45C6-BDBB-03F8F302D133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metadata.Data", "MetadataService\Metadata.Data\Metadata.Data.csproj", "{E5C7B3E0-4314-497E-9463-742DB2E3E931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metadata.Data", "MetadataService\Metadata.Data\Metadata.Data.csproj", "{E5C7B3E0-4314-497E-9463-742DB2E3E931}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StorageService", "StorageService", "{DAA3F7A6-4FCC-4C1A-8B51-679B7C5597F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storage.Api", "StorageService\Storage.Api\Storage.Api.csproj", "{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storage.Client", "StorageService\Storage.Client\Storage.Client.csproj", "{FE050646-9E4A-40D4-8747-857657DFECA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,9 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7F239AB4-711C-4692-8CD9-EB9950A5C7FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -90,6 +93,33 @@ Global
 		{E5C7B3E0-4314-497E-9463-742DB2E3E931}.Release|x64.Build.0 = Release|Any CPU
 		{E5C7B3E0-4314-497E-9463-742DB2E3E931}.Release|x86.ActiveCfg = Release|Any CPU
 		{E5C7B3E0-4314-497E-9463-742DB2E3E931}.Release|x86.Build.0 = Release|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Debug|x64.Build.0 = Debug|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Debug|x86.Build.0 = Debug|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Release|x64.ActiveCfg = Release|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Release|x64.Build.0 = Release|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Release|x86.ActiveCfg = Release|Any CPU
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC}.Release|x86.Build.0 = Release|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Debug|x64.Build.0 = Debug|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Debug|x86.Build.0 = Debug|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Release|x64.ActiveCfg = Release|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Release|x64.Build.0 = Release|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Release|x86.ActiveCfg = Release|Any CPU
+		{FE050646-9E4A-40D4-8747-857657DFECA0}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7F239AB4-711C-4692-8CD9-EB9950A5C7FA} = {3E6E0C9E-155B-4D0B-9CEA-95F3536E6FE4}
@@ -97,5 +127,10 @@ Global
 		{141F3774-DC72-4F45-9674-29BA3AEB6AB5} = {33CA6AA1-C93A-42CB-95EB-A50E995D68B5}
 		{E47C216D-C937-45C6-BDBB-03F8F302D133} = {33CA6AA1-C93A-42CB-95EB-A50E995D68B5}
 		{E5C7B3E0-4314-497E-9463-742DB2E3E931} = {33CA6AA1-C93A-42CB-95EB-A50E995D68B5}
+		{CA661293-9AEB-44CA-A88E-AF2C3F70DEBC} = {DAA3F7A6-4FCC-4C1A-8B51-679B7C5597F5}
+		{FE050646-9E4A-40D4-8747-857657DFECA0} = {DAA3F7A6-4FCC-4C1A-8B51-679B7C5597F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {228F8C75-03A6-4994-908A-B53F0B4D38F7}
 	EndGlobalSection
 EndGlobal

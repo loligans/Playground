@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Metadata.Api.Extensions
+namespace Storage.Api.Extensions
 {
     /// <summary>
     /// The organized group of extensions for starting up the service.
@@ -11,7 +11,7 @@ namespace Metadata.Api.Extensions
         /// <summary>
         /// Adds the authentication authority and required api scopes to use the service.
         /// </summary>
-        public static IServiceCollection AddMetadataAuthentication(this IServiceCollection services)
+        public static IServiceCollection AddStorageAuthentication(this IServiceCollection services)
         {
             // Registers the Identity Server
             services.AddAuthentication("Bearer")
@@ -31,7 +31,7 @@ namespace Metadata.Api.Extensions
                 options.AddPolicy("ApiScope", policy =>
                 {
                     policy.RequireAuthenticatedUser();
-                    policy.RequireClaim("scope", "metadata");
+                    policy.RequireClaim("scope", "storage");
                 });
             });
 

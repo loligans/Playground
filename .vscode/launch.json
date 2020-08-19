@@ -74,6 +74,16 @@
             "cwd": "${workspaceFolder}/MetadataService/Metadata.Client",
             "stopAtEntry": false,
             "console": "internalConsole"
+        },
+        {
+            "name": "Launch Storage Client Demo",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/StorageService/Storage.Client/bin/Debug/netcoreapp3.1/Storage.Client.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/StorageService/Storage.Client",
+            "stopAtEntry": false,
+            "console": "internalConsole"
         }
     ]
 }
