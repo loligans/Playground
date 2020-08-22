@@ -25,9 +25,11 @@ namespace Storage.Api.Extensions
             {
                 UrlPath = "/files",
                 Store = new TusDiskStore(@"C:\Users\loligans\Downloads\TusDatastore", true),
-                Events = new Events {
+                Events = new Events
+                {
                     OnAuthorizeAsync = async eventContext => await OnAuthorizeAsync(eventContext, authService),
-                    OnFileCompleteAsync = async eventContext => {
+                    OnFileCompleteAsync = async eventContext =>
+                    {
                         var file = await eventContext.GetFileAsync();
                     }
                 }
@@ -38,13 +40,15 @@ namespace Storage.Api.Extensions
         private static async Task OnAuthorizeAsync(AuthorizeContext eventContext, IAuthorizationService authService)
         {
             var authenticateResult = await eventContext.HttpContext.AuthenticateAsync();
-            if (authenticateResult is null || authenticateResult.Succeeded is false) {
+            if (authenticateResult is null || authenticateResult.Succeeded is false)
+            {
                 eventContext.FailRequest(HttpStatusCode.Forbidden);
                 return;
             }
 
             var authorizeResult = await authService.AuthorizeAsync(eventContext.HttpContext.User, "ApiScope");
-            if (authorizeResult is null || authorizeResult.Succeeded is false) {
+            if (authorizeResult is null || authorizeResult.Succeeded is false)
+            {
                 eventContext.FailRequest(HttpStatusCode.Unauthorized);
                 return;
             }
