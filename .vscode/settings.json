@@ -2,6 +2,7 @@
     "workbench.colorTheme": "Visual Studio 2019 Dark",
     "omnisharp.enableEditorConfigSupport": true,
     "omnisharp.enableRoslynAnalyzers": true,
+    "omnisharp.enableImportCompletion": true,
     "csharp.semanticHighlighting.enabled": true,
     "files.trimTrailingWhitespace": true,
     "files.associations": {
