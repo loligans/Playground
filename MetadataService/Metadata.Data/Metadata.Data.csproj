@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup Label="Build Properties">
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <RootNamespace>Metadata.Data</RootNamespace>
         <DocumentationFile>$(BaseOutputPath)\$(Configuration)\$(TargetFrameworkVersion)\Metadata.Data.xml</DocumentationFile>
         <!-- EFCore has not been annotated for NRT yet. -->
@@ -9,9 +9,10 @@
     </PropertyGroup>
 
     <ItemGroup Label="Package References">
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0" PrivateAssets="all" />
     </ItemGroup>
 
 </Project>

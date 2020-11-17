@@ -2,13 +2,13 @@
 
     <PropertyGroup Label="Build Properties">
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <RootNamespace>Metadata.Client</RootNamespace>
         <DocumentationFile>$(BaseOutputPath)\$(Configuration)\$(TargetFrameworkVersion)\Metadata.Client.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup Label="Package References">
-        <PackageReference Include="IdentityModel" Version="4.3.1" />
+        <PackageReference Include="IdentityModel" Version="4.4.0" />
     </ItemGroup>
 
 </Project>
